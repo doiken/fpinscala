@@ -1,0 +1,31 @@
+apply plugin: 'idea-scala'
+
+buildscript {
+  repositories{
+    maven{
+      url "https://raw.github.com/rodionmoiseev/maven-repo/master/repo/releases"
+    }
+  }
+  dependencies {
+    classpath group: 'org.rodion.gradle', name: 'idea-scala-plugin', version: '0.2'
+  }
+}
+
+repositories{
+  mavenCentral()
+}
+
+dependencies{
+  scalaApi 'org.scala-lang:scala-library:2.10.3'
+  scalaTools 'org.scala-lang:scala-library:2.10.3'
+  scalaTools 'org.scala-lang:scala-compiler:2.10.3'
+  testCompile 'org.specs2:specs2_2.10:2.3.6'
+}
+
+task initProjectDirs() {
+    new File('src/main/scala').mkdirs()
+    new File('src/main/resources').mkdirs()
+    new File('src/test/scala').mkdirs()
+    new File('src/test/resources').mkdirs()
+}
+
