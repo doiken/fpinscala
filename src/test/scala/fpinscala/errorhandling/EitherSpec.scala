@@ -1,4 +1,4 @@
-package fpinscala.errorhandling
+/*package fpinscala.errorhandling
 
 import org.specs2.mutable._
 
@@ -61,4 +61,4 @@ class EitherSpec extends Specification {
       right.map2(left)(_ * _) == expected
     }
   }
-}
+}*/

@@ -9,7 +9,6 @@ class TreeSpec extends Specification {
     }
     "size of 2 leaf and 1 branch is 3" in {
       Tree.size(Branch(Leaf(1), Leaf(2))) === 3
-    }
     "size of each 2 leaf and 3 branch is 7" in {
       Tree.size(Branch(Branch(Leaf(1), Leaf(2)), Branch(Leaf(3), Leaf(4)))) === 7
     }
