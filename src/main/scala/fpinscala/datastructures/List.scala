@@ -54,10 +54,10 @@ object List {
     case Cons(h,t) => Cons(h, init(t))
   }
 
-  def foldRight[A,B](as: List[A], z: B)(f: (A, B) => B): B =
+  def foldRight[A,B](as: List[A], acc: B)(f: (A, B) => B): B =
     as match {
-      case Nil => z
-      case Cons(x, xs) => f(x, foldRight(xs, z)(f))
+      case Nil => acc
+      case Cons(h, t) => f(h, foldRight(t, acc)(f))
     }
   def sum2(ns: List[Int]) =
     foldRight(ns, 0)((x,y) => x + y)
